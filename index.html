@@ -1,21 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chat Partagé - Alice et Bob</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="chat-container">
-        <div class="chat-header">Chat entre rahma et sarra </div>
-        <div class="chat-messages" id="chatMessages"></div>
-        <div class="chat-input">
-            <input type="text" id="messageInput" placeholder="Tapez un message...">
-            <button id="sendButton">Envoyer</button>
+    <div class="chat-wrapper">
+        <!-- Conteneur central pour les messages -->
+        <div class="chat-messages-container">
+            <div class="chat-header">
+                <h2>Conversation Partagée</h2>
+            </div>
+            <div id="chat-messages" class="chat-messages"></div>
+            <div id="notification" class="notification">Nouveau message !</div>
+        </div>
+
+        <!-- Divs d'entrée pour Alice et Bob -->
+        <div class="inputs-wrapper">
+            <div class="input-section alice">
+                <h3>Alice</h3>
+                <form id="message-form-alice" class="message-form">
+                    <input type="text" id="message-input-alice" placeholder="Tapez un message..." required>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
+            <div class="input-section bob">
+                <h3>Bob</h3>
+                <form id="message-form-bob" class="message-form">
+                    <input type="text" id="message-input-bob" placeholder="Tapez un message..." required>
+                    <button type="submit">Envoyer</button>
+                </form>
+            </div>
         </div>
     </div>
-    <div class="notification" id="notification">Nouveau message !</div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
