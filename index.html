@@ -7,7 +7,25 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="chat-wrapper">
+    <!-- Overlay pour la saisie des noms -->
+    <div id="name-setup-overlay" class="overlay">
+        <div class="overlay-content">
+            <h2>Configuration du Chat</h2>
+            <form id="name-setup-form">
+                <div class="input-group">
+                    <label for="name-left">Nom de la personne de gauche :</label>
+                    <input type="text" id="name-left" placeholder="Ex: Alice" required>
+                </div>
+                <div class="input-group">
+                    <label for="name-right">Nom de la personne de droite :</label>
+                    <input type="text" id="name-right" placeholder="Ex: Bob" required>
+                </div>
+                <button type="submit">Démarrer le Chat</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="chat-wrapper" style="display: none;"> <!-- Ajout de style="display: none;" -->
         <!-- Conteneur central pour les messages -->
         <div class="chat-messages-container">
             <div class="chat-header">
@@ -20,14 +38,14 @@
         <!-- Divs d'entrée pour Alice et Bob -->
         <div class="inputs-wrapper">
             <div class="input-section alice">
-                <h3>Alice</h3>
+                <h3 id="left-user-name">Alice</h3> <!-- Ajout de l'ID -->
                 <form id="message-form-alice" class="message-form">
                     <input type="text" id="message-input-alice" placeholder="Tapez un message..." required>
                     <button type="submit">Envoyer</button>
                 </form>
             </div>
             <div class="input-section bob">
-                <h3>Bob</h3>
+                <h3 id="right-user-name">Bob</h3> <!-- Ajout de l'ID -->
                 <form id="message-form-bob" class="message-form">
                     <input type="text" id="message-input-bob" placeholder="Tapez un message..." required>
                     <button type="submit">Envoyer</button>
