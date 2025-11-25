@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Overlay pour la saisie des noms -->
+    <!-- icone pour saisir les noms -->
     <div id="name-setup-overlay" class="overlay">
         <div class="overlay-content">
             <h2>Configuration du Chat</h2>
             <form id="name-setup-form">
                 <div class="input-group">
                     <label for="name-left">Nom de la personne de gauche :</label>
-                    <input type="text" id="name-left" placeholder="Ex: Alice" required>
+                    <input type="text" id="name-left" placeholder="Ex: Rahma" required>
                 </div>
                 <div class="input-group">
                     <label for="name-right">Nom de la personne de droite :</label>
-                    <input type="text" id="name-right" placeholder="Ex: Bob" required>
+                    <input type="text" id="name-right" placeholder="Ex: Sarra" required>
                 </div>
                 <button type="submit">Démarrer le Chat</button>
             </form>
         </div>
     </div>
     
-    <div class="chat-wrapper" style="display: none;"> <!-- Ajout de style="display: none;" -->
-        <!-- Conteneur central pour les messages -->
+    <div class="chat-wrapper" style="display: none;"> 
+        
         <div class="chat-messages-container">
             <div class="chat-header">
                 <h2>Conversation Partagée</h2>
@@ -35,22 +35,39 @@
             <div id="notification" class="notification">Nouveau message !</div>
         </div>
 
-        <!-- Divs d'entrée pour Alice et Bob -->
+       
         <div class="inputs-wrapper">
             <div class="input-section alice">
-                <h3 id="left-user-name">Alice</h3> <!-- Ajout de l'ID -->
+                <h3 id="left-user-name">personne a </h3> 
                 <form id="message-form-alice" class="message-form">
-                    <input type="text" id="message-input-alice" placeholder="Tapez un message..." required>
-                    <button type="submit">Envoyer</button>
+                    <div class="message-input-container">
+                        <input type="text" id="message-input-alice" placeholder="Tapez un message..." required>
+                        <button type="submit">Envoyer</button>
+                        <button type="button" class="emoji-btn" data-input="message-input-alice">😊</button>
+                        
+                        <button type="button" class="action-btn mic-btn">🎤</button>
+                        <button type="button" class="action-btn camera-btn">📷</button>
+                   
+                    </div>
+                    <div class="emoji-picker" data-input="message-input-alice"></div>
                 </form>
             </div>
             <div class="input-section bob">
-                <h3 id="right-user-name">Bob</h3> <!-- Ajout de l'ID -->
+                <h3 id="right-user-name">personne b</h3> 
                 <form id="message-form-bob" class="message-form">
-                    <input type="text" id="message-input-bob" placeholder="Tapez un message..." required>
-                    <button type="submit">Envoyer</button>
+                    <div class="message-input-container">
+                        <input type="text" id="message-input-bob" placeholder="Tapez un message..." required>
+                         <button type="submit">Envoyer</button>
+                        <button type="button" class="emoji-btn" data-input="message-input-bob">😊</button>
+                       
+                        <button type="button" class="action-btn mic-btn">🎤</button>
+                        <button type="button" class="action-btn camera-btn">📷</button>
+
+                    </div>
+                    <div class="emoji-picker" data-input="message-input-bob"></div>
                 </form>
             </div>
+
         </div>
     </div>
     <script src="script.js"></script>
