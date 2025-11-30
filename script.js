@@ -233,6 +233,8 @@ function addReaction(messageIndex, emoji, sender) {
                 }
             }
         });
+        messages[messageIndex].reactions[emoji] = [sender];
+
         
     }
     //save and update
