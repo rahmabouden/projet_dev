@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Partagé - Alice et Bob</title>
+    <title>Chat Partagé - perA et perB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -37,34 +37,57 @@
 
        
         <div class="inputs-wrapper">
-            <div class="input-section alice">
+            <div class="input-section perA">
                 <h3 id="left-user-name">personne a </h3> 
-                <form id="message-form-alice" class="message-form">
+                <form id="message-form-perA" class="message-form">
                     <div class="message-input-container">
-                        <input type="text" id="message-input-alice" placeholder="Tapez un message..." required>
+                        <input type="text" id="message-input-perA" placeholder="Tapez un message..." required>
                         <button type="submit">Envoyer</button>
-                        <button type="button" class="emoji-btn" data-input="message-input-alice">😊</button>
+                        <button type="button" class="emoji-btn" data-input="message-input-perA">😊</button>
                         
                         <button type="button" class="action-btn mic-btn">🎤</button>
-                        <button type="button" class="action-btn camera-btn">📷</button>
+                        <button type="button" class="action-btn camera-btn" data-user="perA"> ⋮ </button>
                    
                     </div>
-                    <div class="emoji-picker" data-input="message-input-alice"></div>
+                    <div class="emoji-picker" data-input="message-input-perA"></div>
+                    <input type="file" id="camera-input-perA" accept="image/*" capture="camera" style="display: none;">
+                    <input type="file"  id="gallery-input-perA" accept="image/*" style="display: none;" >
+                    <input type="file" id="file-input-perA" accept="*/*" style="display: none;">
+                    <div id="camera-modal-perA" class="overlay" style="display: none;">
+                        <div class="overlay-content">
+
+                            <h2>Add Media</h2>
+                            <button type="button" id="take-photo-btn" class="camera-option-btn" data-user="perA" data-action="camera"> 📷 Prendre un photo</button>
+                            <button type="button" id="upload-photo-btn" class="camera-option-btn" data-user="perA" data-action="gallery"> 🖼️ Choisir de la gallerie</button>
+                            <button type="button" class="upload-file-btn" data-user="perA">📎Télécharger un fichier </button>
+                        </div>
+                    </div>
                 </form>
             </div>
-            <div class="input-section bob">
+            <div class="input-section perB">
                 <h3 id="right-user-name">personne b</h3> 
-                <form id="message-form-bob" class="message-form">
+                <form id="message-form-perB" class="message-form">
                     <div class="message-input-container">
-                        <input type="text" id="message-input-bob" placeholder="Tapez un message..." required>
+                        <input type="text" id="message-input-perB" placeholder="Tapez un message..." required>
                          <button type="submit">Envoyer</button>
-                        <button type="button" class="emoji-btn" data-input="message-input-bob">😊</button>
+                        <button type="button" class="emoji-btn" data-input="message-input-perB">😊</button>
                        
                         <button type="button" class="action-btn mic-btn">🎤</button>
-                        <button type="button" class="action-btn camera-btn">📷</button>
+                        <button type="button" class="action-btn camera-btn" data-user="perB"> ⋮ </button>
 
                     </div>
-                    <div class="emoji-picker" data-input="message-input-bob"></div>
+                    <div class="emoji-picker" data-input="message-input-perB"></div>
+                    <input type="file" id="camera-input-perB" accept="image/*" capture="camera" style="display: none;">
+                    <input type="file"  id="gallery-input-perB" accept="image/*" style="display : none">
+                    <input type="file" id="file-input-perB" accept="*/*" style="display: none;">
+                    <div id="camera-modal-perB" class="overlay" style="display: none;">
+                        <div class="overlay-content">
+                            <h2>Add Media</h2>
+                            <button type="button" id="take-photo-btn" class="camera-option-btn" data-user="perB" data-action="camera"> 📷 Prendre un photo </button>
+                            <button type="button" id="upload-photo-btn" class="camera-option-btn" data-user="perB" data-action="gallery"> 🖼️ Choisir de la gallerie</button>
+                            <button type="button" class="upload-file-btn" data-user="perB">📎Télécharger un fichier</button>
+                        </div>
+                    </div>
                 </form>
             </div>
 
